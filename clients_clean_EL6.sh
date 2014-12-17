@@ -25,14 +25,7 @@ wget $WGET_OPTIONS $VOMS_REPO -O /etc/yum.repos.d/voms.repo
 yum clean all
 
 # install voms-clients
-yum install -y voms-clients3
-
-# Setup certificate for voms-proxy-init test
-mkdir -p .globus
-cp /usr/share/igi-test-ca/test0.cert.pem .globus/usercert.pem
-cp /usr/share/igi-test-ca/test0.key.pem .globus/userkey.pem
-chmod 600 .globus/usercert.pem
-chmod 400 .globus/userkey.pem
+yum install -y voms-clients3 voms-clients
 
 # Configure vomsdir
 mkdir -p /etc/grid-security/vomsdir
